@@ -13,7 +13,7 @@
   }
   .starwars-demo {
     height: 17em;
-    width: 20em;
+    width: 34em;
     position: absolute;
     left: 50%;
     top: 53%;
@@ -39,6 +39,16 @@
       animation: wars 10s ease-out infinite;
   }
 
+  .byline{
+    width: 130%;
+    color: white;
+    font: bold 50px serif;
+    letter-spacing: 15px;
+    top: 37%;
+    left: -12%;
+    animation: byline 10s ease-out infinite;
+    transform-style: preserve-3d;
+  }
   @keyframes star{
       0%{
           opacity: 0;
@@ -78,4 +88,32 @@
         /* 1em = 16px */
         transform: translateZ(-400em);
     }
+}
+
+@keyframes byline {
+    0% {
+        opacity: 0;
+        transform: scale(1.5);
+      }
+    
+      15% {
+        opacity: 1;
+        transform: translateZ(10em) rotateY(180deg);
+      }
+    
+      80% {
+        opacity: 1;
+        transform: translateZ(10em);
+      }
+    
+      95% {
+        opacity: 1;
+        transform: translateZ(0em);
+      }
+    
+      100% {
+        opacity: 0;
+      }
+    
+
 }
