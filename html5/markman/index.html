@@ -19,10 +19,12 @@
 
         a {
             text-decoration: none;
+            cursor: pointer;
         }
 
         a:link {
             color: #3377aa;
+            text-decoration: none;
         }
 
         a:visited {
@@ -45,7 +47,7 @@
         .article {
             width: 675px;
             float: left;
-            height: 500px;
+            height: 900px;
             background: rebeccapurple;
         }
 
@@ -83,29 +85,112 @@
             padding: 16px 0 16px 18px;
 
         }
-        .hot-link h2{
+
+        .hot-link h2 {
             margin: 0;
             padding: 0;
             border: none;
             color: #007722;
             font-size: 16px;
         }
-        .hot-link ul{
+
+        .hot-link ul {
             font-size: 14px;
             color: #cedcd9;
         }
-        .hot-link li{
+
+        .hot-link li {
             margin-top: 8px;
             font-size: 13px;
         }
 
+        .billboard {
+            margin-bottom: 20px;
+            height: 500px;
+            line-height: 1.62;
+            /* background: #666999; */
+        }
+
+        .billboard-hd {
+            line-height: 1.62;
+        }
+
+        .billboard-hd h2 {
+            font-size: 16px;
+            color: black;
+            margin-bottom: 5px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .billboard-hd h2 span {
+            font-size: 13px;
+            margin-left: 12px;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: none;
+            font-size: 13px;
+            line-height: 1.62;
+            padding: 0;
+            margin: 0;
+        }
+
+        tr {
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+        }
+
+        .billboard-bd td {
+            padding: 7px 0;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .billboard-bd .order {
+            width: 20px;
+            font-size: 9px;
+            text-align: center;
+        }
+
+        .billboard-bd .title {
+            width: 290px;
+        }
+        .screening-first{
+            margin-bottom: 36px;
+            height: 324px;
+            background: #007722;
+        }
+        .screening-second{
+            margin-bottom: 40px;
+            height: 334px;
+            background: #cedcd9;
+        }
     </style>
 </head>
 
 <body>
     <div class="content">
         <div class="article">
+            <div class="screening-first">
+                <div class="screening-first-title">
+                    <h2>
+                        <span>
+                            <a href="">
 
+                            </a>
+                            <a href="">
+
+                            </a>
+                        </span>
+                    </h2>
+
+                </div>
+            </div>
+            <div class="screening-second">
+
+            </div>
         </div>
         <div class="aside">
             <div class="rating_answer">
@@ -116,7 +201,7 @@
                 </ul>
             </div>
             <div class="ad">
-
+                <img src="./images/ad.gif" alt="">
             </div>
             <div class="hot-link">
                 <h2>
@@ -135,6 +220,102 @@
                         </a>
                     </li>
                 </ul>
+            </div>
+            <div class="billboard">
+                <div class="billboard-hd">
+                    <h2>
+                        周日口碑榜
+                        <span>
+                            <a href="#">
+                                更多榜单>>
+                            </a>
+                        </span>
+                    </h2>
+                </div>
+                <div class="billboard-bd">
+                    <table>
+                        <tr>
+                            <td class="order">
+                                1
+                            </td>
+                            <td class="title">
+                                <a href="#">dwadwa</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="order">
+                                2
+                            </td>
+                            <td class="title">
+                                <a href="#">无双</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="order">
+                                3
+                            </td>
+                            <td class="title">
+                                <a href="#">特工</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="order">
+                                4
+                            </td>
+                            <td class="title">
+                                <a href="#">影</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="order">
+                                5
+                            </td>
+                            <td class="title">
+                                <a href="#">不留痕迹</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="order">
+                                6
+                            </td>
+                            <td class="title">
+                                <a href="#">与神同行2：因与缘</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="order">
+                                7
+                            </td>
+                            <td class="title">
+                                <a href="#">找到你</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="order">
+                                8
+                            </td>
+                            <td class="title">
+                                <a href="#">讳言'yan</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="order">
+                                9
+                            </td>
+                            <td class="title">
+                                <a href="#">凯蒂的道别</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="order">
+                                10
+                            </td>
+                            <td class="title">
+                                <a href="#">犬舍惊魂</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
