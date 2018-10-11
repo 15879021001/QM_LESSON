@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		
+	    <style type="text/css">
+	    	
+	    	*{
+	    		padding: 0;
+	    		margin: 0;
+	    	}
+	    	
+	    	div{
+	    		
+	    		width: 100px;
+	    		height: 100px;
+	    		background-color: red;
+	    		position: absolute;
+	    		left: 50%;
+	    		top:50%;
+	    		margin-left: -50px;
+	    		margin-right: -50px;
+	    		transform: rotate(45deg);
+	    		filter: drop-shadow(0 0 30px red);
+	    		opacity: 0.8;
+	    		animation: aa 0.45s linear infinite;
+	    		
+	    	}
+	    	
+	    	@-webkit-keyframes aa{
+				50%{
+					
+					transform: scale(1.2) rotate(45deg);
+					
+				}
+				90%{
+					
+					transform: scale(0.5) rotate(45deg); 
+					
+				}
+			}
+			
+			div:before{
+				
+				content: "";
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				display: block;
+				position: absolute;
+				left: -50px;
+				top: 0px;
+				border-radius: 50%;
+				
+			}
+			
+			div:after{
+				
+				content: "";
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				display: block;
+				position: absolute;
+				left: 0px;
+				top: -50px;
+				border-radius: 50%;
+				
+			}
+	    	
+	    </style>
+		
+		<title></title>
+	</head>
+	<body>
+		
+		<div id="div1">
+			
+		</div>
+		
+		<script type="text/javascript">
+		var id1=document.getElementById("div1");
+		id1.onmouseover=function(){
+			
+			id1.style.transform ="rotate(0deg)";
+			id1.style.animation ="aa 0s linear infinite";
+		}
+		id1.onmouseover=function(){
+			
+			id1.style.transform ="rotate(45deg)";
+			id1.style.animation ="aa 1s linear infinite";
+		}
+	</script>
+		
+	</body>
+</html>
