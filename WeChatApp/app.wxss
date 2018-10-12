@@ -1,0 +1,12 @@
+@import "styles/reset.wxss";
+@import "styles/hero.wxss";
+@import "styles/button.wxss";
+@import "styles/card.wxss";
+
+page{
+  background: #ffffff;
+}
+
+.section{
+  height: 100vh;
+}
