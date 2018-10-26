@@ -5,6 +5,14 @@ Page({
   data: {
     userList: []
   },
+  onLoad: function() {
+    userInfo.get().then(res => {
+      // console.log(res)
+      this.setData({
+        userList: res.data
+      })
+    })
+  },
   getUserInfo: function(result) {
     console.log(result);
     // openId 用户独有， 拿不到， 云函数可以拿到, 好几个接口
@@ -13,20 +21,46 @@ Page({
       name: 'getOpenId',
       complete: res => {
         // 用户来了
-        userInfo.add({
-          data: result.detail.userInfo
-        }).then(res => {
+        // 一个用户生成了多条记录 错误
+        // userInfo   mysql _openid unique
+        // userInfo  不要重复入库？
+        // _openid 到userInfo里先查下，where 
+        // true  不做
+        // false add 
+        let openid = res.result.openId
+        userInfo.where({
+          _openid: openid
+        }).count().then(res => {
           console.log(res);
+          if (res.total == 0) {
+            userInfo.add({
+              data: result.detail.userInfo
+            }).then(res => {
+              console.log(res);
+            })
+          }else{
+            wx.showToast({
+              title:'不能重复添加'
+            })
+          }
         })
+
+
+
+        // userInfo.add({
+        //   data: result.detail.userInfo
+        // }).then(res => {
+        //   console.log(res);
+        // })
         // console.log(res);
       }
     })
   },
   onShareAppMessage: (res) => {
     return {
-      title: '私照App',
+      title: '陶陶的私照App',
       path: '/pages/index/index',
-      imageUrl: 'https://7461-taokun-599366020-1257898790.tcb.qcloud.la/104897.png',
+      imageUrl: 'https://636f-codingdream-74b4e5-1256758450.tcb.qcloud.la/687434.png',
       success: res => {
         console.log('转发成功')
       },
