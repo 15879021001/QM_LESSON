@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // js 是单线程语言 如何实现事件监听  用 Event Loop
+        //不管是  setTimeout 还是 addEventListener
+        // setTimeout先挂载在  Event Loop上
+
+        const dsq = async()=>{
+            let result = await new Promise((resolve,reject)=>{  //Promise 信任
+                setTimeout(function(){
+                    console.log('aaa');
+                    resolve('correct');
+                },1000)
+            });
+            console.log(result);
+            
+            console.log('bbb');
+        }
+        dsq();
+    </script>
+</body>
+
+</html>
