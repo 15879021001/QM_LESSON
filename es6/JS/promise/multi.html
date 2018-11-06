@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const postsPromise = fetch('https://wesbos.com/wp-json/wp/v2/posts');
+
+        const streetCarsPromise = fetch('http://data.ratp.fr/api/datasets/1.0/search/?q=paris')
+
+        // postsPromise.then(res => res.json()).then(data => {
+        //     console.log(data);
+        //     return streetCarsPromise;
+        // }).then(res => res.json()).then(data => {
+        //     console.log(data);
+
+        // });
+
+        Promise.all([postsPromise,streetCarsPromise]).then(responses => {
+            // console.log(responses)
+            return Promise.all(responses.map(res=>res.json()))
+        })
+    </script>
+</body>
+
+</html>
