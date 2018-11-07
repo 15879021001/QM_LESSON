@@ -1,0 +1,36 @@
+/* 共有样式 */
+.flex_vert{
+  display: flex;
+  flex-direction: column;
+}
+.container{
+  height: 100vh;
+  overflow: hidden;
+  background-color: #fff;
+}
+.other{
+  height: 300rpx;
+  margin-bottom: 20rpx;
+  background-color: black;
+
+}
+
+.notes{
+  flex: 1;
+  background-color:green;
+  overflow: hidden;
+}
+
+.notes_inner{
+  text-align: center;
+}
+.notes_col{
+  display: inline-block;
+  width: 46.5%;
+  height: 300rpx;
+  background-color: red;
+}
+.notes_col-left{
+  background-color: yellow;
+  margin-right: 2.6%;
+}
