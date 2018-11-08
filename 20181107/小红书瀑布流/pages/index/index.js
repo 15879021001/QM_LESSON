@@ -26,7 +26,7 @@ Page({
         this.setData({
           imgWidth: imgWidth
         }, () => {
-          console.log('可以去取数据了');
+          // console.log('可以去取数据了');
           loadNotes(this.addNotes);
         })
       }
@@ -35,7 +35,7 @@ Page({
   addNotes(res) {
     const total = res.total;
     let notes = res.data;
-    console.log(total, notes);
+    // console.log(total, notes);
     // notes height 0 数据里有height概念， 
     notes = notes.map(note => {
       return {
