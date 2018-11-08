@@ -1,24 +1,48 @@
 <view style="display:none">
-  <image src="{{test_url}}" bindload="onImageLoad"/>
+  <image wx:for="{{images}}" wx:key="index" data-id="{{item.id}}" src="{{item.pic}}" bindload="onImageLoad"/>
 </view>
-
 <view class="container flex_vert">
-  <view class="other">
-
-  </view>
-  <scroll-view class="notes" scroll-y="{{true}}" bindscrolltoupper="upper" bindscrolltolower="lower" lower-threshold="100">
+  <view class="other"></view>
+  <scroll-view class="notes" scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" lower-threshold="200">
     <view class="notes_inner">
       <view class="notes_col notes_col-left">
         <view wx:for="{{col1}}" wx:key="_id">
           <view class="note-item">
-            <image style="height:{{}}"></image>
-            <view class="note-item_content"></view>
+            <image style="width:100%;height:{{item.height}}px;" src="{{item.pic}}"></image>
+            <view class="note-item_content">
+              <view class="note-item_title">{{item.title}}</view>
+              <view class="note-item_meta">
+                <view class="note-item_user">
+                  <view class="note-item_avatar"
+                  style="background-image:url({{item.avatar}})"></view>
+                  <text>{{item.username}}</text>
+                </view>
+                <view class="note-item_like">
+                  <text>{{item.like_num}}</text>
+                </view>
+              </view>
+            </view>
           </view>
         </view>
       </view>
       <view class="notes_col">
         <view wx:for="{{col2}}" wx:key="_id">
-          
+          <view class="note-item">
+            <image style="width:100%;height:{{item.height}}px;" src="{{item.pic}}"></image>
+            <view class="note-item_content">
+              <view class="note-item_title">{{item.title}}</view>
+              <view class="note-item_meta">
+                <view class="note-item_user">
+                  <view class="note-item_avatar"
+                  style="background-image:url({{item.avatar}})"></view>
+                  <text>{{item.username}}</text>
+                </view>
+                <view class="note-item_like">
+                  <text>{{item.like_num}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
         </view>
       </view>
     </view>

@@ -1,36 +1,87 @@
-/* 共有样式 */
-.flex_vert{
+/* 公有样式 */
+.flex_vert {
   display: flex;
   flex-direction: column;
 }
-.container{
+
+.container {
   height: 100vh;
   overflow: hidden;
-  background-color: #fff;
+  background: white;
 }
-.other{
+
+.other {
   height: 300rpx;
   margin-bottom: 20rpx;
-  background-color: black;
-
+  background: lightgray;
 }
 
-.notes{
+.notes {
   flex: 1;
-  background-color:green;
   overflow: hidden;
 }
 
-.notes_inner{
+.notes_inner {
   text-align: center;
 }
-.notes_col{
-  display: inline-block;
+
+.notes_col {
   width: 46.5%;
   height: 300rpx;
-  background-color: red;
+  display: inline-block;
+  vertical-align: top;
 }
-.notes_col-left{
-  background-color: yellow;
+
+.notes_col-left {
   margin-right: 2.6%;
+}
+
+.note-item {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 5rpx 10rpx 0 rgba(0, 0, 0, .4);
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+
+.note-item_content {
+  width: 88%;
+  margin: 0rpx auto;
+  text-align: left;
+}
+
+.note-item_title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* 两行文字 */
+  -webkit-line-clamp: 2;  
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  margin: 20rpx 0;
+  font-size: 26rpx;
+  line-height: 1.5;
+}
+.note-item_meta{
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.note-item_user{
+  flex: 1;
+}
+.note-item_like text{
+  font-size: 10pt;
+}
+.note-item_avatar{
+  width: 50rpx;
+  height: 50rpx;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+.note-item_avatar text {
+  font-size: 10pt;
 }
