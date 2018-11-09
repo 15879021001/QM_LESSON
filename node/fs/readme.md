@@ -1,0 +1,1 @@
+Node  readFileSync 按顺序读取文件
