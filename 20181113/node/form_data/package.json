@@ -1,0 +1,13 @@
+{
+  "name": "form_data",
+  "version": "0.1.0",
+  "description": "1. Backend\r     Web Server 硬件服务器 || php java 等语言 后端服务器运用程序\r     基础：\r         提供 HTTP 访问 http://\r     127.0.0.1  IP => domain  baidu.com\r     3000 端口",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
