@@ -6,3 +6,11 @@
 
     antd 是 UI 风格
     
+2. 路由接管一切，配置在最前面
+   <Router>
+    <Route path="" component="">
+   </Router>
+
+   又两种路由 BrowserRouter  HashRouter(兼容性好)
+
+   history.pushState(state,title,url)
