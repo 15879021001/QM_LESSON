@@ -1,0 +1,6 @@
+{
+    "plugins":[
+        ["@babel/plugin-proposal-decorators",{"legacy":true}], //添加装饰器插件
+        ["@babel/plugin-proposal-class-properties",{"loose" : true}]
+    ]
+}
