@@ -7,3 +7,6 @@
 2.  title定制
    content定制
    关闭modal onClose
+
+3. 404
+   Route 不加path 所有都匹配，未匹配到path的路由404
