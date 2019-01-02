@@ -35,9 +35,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getFilmData: () => {
       // dispatch({type: '', payload: ''});
-      dispatch((dispatch) => {
-        filmAction(dispatch);
-      });
+      dispatch(filmAction());
     }
   }
 }
