@@ -1,26 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import ReduxThunk from 'redux-thunk';
-import ReduxLogger from 'redux-logger';
-import { Provider } from 'react-redux';
+// content api 共享状态机制
+// react-redux 基于它
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from './context'
+import Header from './Header'
 
-const reducers = combineReducers({
-  films: (state = [], action) => {
-    let { type, payload } = action;
-    switch(type) {
-      case "GET_FILM_DATA":
-        return payload;
-      default:
-        return state;
-    }
+class App extends Component {
+  render(){
+    return(
+      <Provider value={{title: 'React In Patterns'}}>
+        <Header />
+      </Provider>
+    )
   }
-})
+}
 
-const store = createStore(reducers, applyMiddleware(ReduxThunk, ReduxLogger));
-ReactDOM.render(
-<Provider store={store}>
-<App />
-</Provider>
-, document.getElementById('root'));
+ReactDOM.render(<App/>,document.getElementById('root'))
