@@ -1,1 +1,1 @@
-import * as MembersPage from './page'
+export { MembersPage } from './page'
