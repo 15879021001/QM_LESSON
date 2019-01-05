@@ -25,3 +25,5 @@
       interface MemberEntity
   2. model 层
   3. api层
+
+common input, button => form => page(与redux结合 state) => pageContainer
