@@ -65,7 +65,14 @@
 6. 创建数据库
    .\node_modules\.bin\sequelize db:create
 7. 创建表
+   .\node_modules\.bin\sequelize db:migrate
+8. 给表添加内容
    .\node_modules\.bin\sequelize migration:create --name create-shops-table
+
+9. 建些测试数据 在seeders文件夹下
+    .\node_modules\.bin\sequelize seed:create --name init-shops
+10. 添加内容
+    .\node_modules\.bin\sequelize db:seed:all
 - 首先考虑安全
   数据库的连接信息 统一放到.env文件下来保存
   .gitignore 本地有 但不上传github
