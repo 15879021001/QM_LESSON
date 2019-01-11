@@ -20,5 +20,5 @@ module.exports = {
       }
     )
   ,
-  down: queryInterface => queryInterface.dropTable('shop')
+  down: queryInterface => queryInterface.dropTable('shops')
 }
