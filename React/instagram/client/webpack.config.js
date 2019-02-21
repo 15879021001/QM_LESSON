@@ -34,7 +34,25 @@ module.exports = {
       },
       {
         test: /\.(css|scss|less)$/,
-      use: ['style-loader','css-loader','sass-loader']
+      use: ['style-loader',
+      {
+        loader: 'css-loader',
+        options: {
+          modules: true,
+          localIdentName: '[local]--[hash:base64:5]'
+        }
+      },
+      'sass-loader'],
+      exclude: /node_modules/
+      },
+      {
+        test: /\.(css|scss|less)$/,
+      use: ['style-loader',
+      {
+        loader: 'css-loader',
+      },
+      'sass-loader'],
+      include: /node_modules/
       }
     ]
   },
@@ -43,7 +61,7 @@ module.exports = {
       '@': clientPath,
       '@css': path.resolve(clientPath,'assets/style'),
       '@assets': path.resolve(clientPath,'assets'),
-      '@componets': path.resolve(clientPath,'src/component'),
+      '@components': path.resolve(clientPath,'src/components'),
       '@common': path.resolve(clientPath,'src/common')
     }
   },
@@ -58,7 +76,13 @@ module.exports = {
     overlay: true,
     // stats: 'error-only',
     open: true,
-    disableHostCheck: true
+    disableHostCheck: true,
+    proxy: {
+      "/api": {
+        target: "http://127.0.0.1:7001",
+        changeOrigin: true
+      }
+    }
   },
   plugins: [
     new HtmlWebPackPlugin({
